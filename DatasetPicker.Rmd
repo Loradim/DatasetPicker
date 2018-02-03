@@ -1,0 +1,66 @@
+---
+title: "Dataset Picker"
+author: "Heiko Lange"
+date: "1 Februar 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Problem/Opportunity
+<hr>
+
+* You have an idea you want to try in R, but you are missing the right dataset?
+* You remember there was this interesting timeseries, but you forgot the name of it?
+* You found a new package but have no idea what datasets it provides?
+
+<br>
+<hr>
+<h1>Look no further!</h1>
+
+## Value Proposition
+<div class="columns-2">
+
+* DatasetPicker saves you countless hours of time searching for the right dataset
+* Filter by data type, # Observations, # Variables or search by name
+* Look into almost any package you like and have installed on the server
+
+```{r out.width="400px", out.height="300px"}
+library(ggplot2)
+
+df <- data.frame(UsageDatasetPicker = c("Without", "With"), values = c(10, 1))
+g <- ggplot(df, aes(UsageDatasetPicker, values)) +
+    geom_bar(stat = "identity", aes(fill = UsageDatasetPicker)) +
+    labs(x = "") + labs(y = "Approx. search time in minutes") +
+    ggtitle("Time spend searching the right dataset") +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          legend.direction = "horizontal", legend.position = "bottom")
+g
+```
+<span style="font-size: 12px;">(Survey not representative - there was only participant)</span>
+</div>
+
+## Underlying Magic
+<hr>
+
+* DatasetPicker will scan through a given package and analyses it datasets
+* DatasetPicker gives you filter options based on the datasets of that package
+* DatasetPicker can browse through all your installed packages
+* DatasetPicker standardized different formats
+
+<br>
+<hr>
+<h1>Did you know, that ggplot2 brings its own data?</h1>
+
+## DatasetPicker - look for yourself
+
+<hr>
+<br>
+
+* Find the slides on [Rpubs](http://rpubs.com/Loradim/datasetpicker/)
+
+* Or go directly to the [DatasetPicker App](https://loradim.shinyapps.io/datasetpicker/)
+
+* Sourcecode can be found in my [github repository](https://github.com/Loradim/DatasetPicker)
